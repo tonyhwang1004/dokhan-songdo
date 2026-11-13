@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>대치독한수능학원 송도</title>
+<meta name="description" content="대치 독수리의대관 강사진이 송도에서 직접 가르치는 소수정예 수능 전문 학원">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f4f6fa; --ink:#111827; --sub:#4b5563; --muted:#8a94a6;
+  --navy:#0f1d3a; --navy2:#16295a; --gold:#d4a017; --gold2:#f2c94c; --line:#e5e8ef;
+  --card:#ffffff; --shadow:0 6px 24px rgba(15,29,58,.08);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1020; --bg2:#121a30; --ink:#eef2fb; --sub:#b7c0d4; --muted:#8792aa;
+  --line:#243052; --card:#151e36; --shadow:0 6px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#0b1020; --bg2:#121a30; --ink:#eef2fb; --sub:#b7c0d4; --muted:#8792aa;
+  --line:#243052; --card:#151e36; --shadow:0 6px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;line-height:1.6;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+/* 상단 메뉴 */
+header{position:sticky;top:0;z-index:50;background:rgba(15,29,58,.96);backdrop-filter:blur(8px);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:-.5px}
+.logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);display:grid;place-items:center;font-size:17px;font-weight:900}
+.logo small{display:block;font-size:11px;font-weight:500;color:#c9d3ea;letter-spacing:0}
+.menu{display:flex;gap:26px;font-size:15px;font-weight:500}
+.menu a{opacity:.85}.menu a:hover{opacity:1;color:var(--gold2)}
+.cta{background:var(--gold);color:var(--navy);padding:9px 16px;border-radius:999px;font-weight:700;font-size:14px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+@media(max-width:860px){
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:8px 0}
+  .menu.open{display:flex}.menu a{padding:12px 20px}
+  .burger{display:block}.nav .cta{display:none}
+}
+
+/* 히어로 */
+.hero{background:radial-gradient(1200px 500px at 80% -10%,#2a4590 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:90px 0 80px;overflow:hidden}
+.hero .tag{display:inline-block;border:1px solid rgba(242,201,76,.6);color:var(--gold2);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:18px}
+.hero h1{font-size:clamp(32px,5.4vw,58px);line-height:1.18;margin:0 0 18px;font-weight:900;letter-spacing:-1.5px}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{font-size:clamp(15px,1.8vw,19px);color:#d6def0;max-width:640px;margin:0 0 30px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;font-size:15px}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px}
+.stat b{display:block;font-size:26px;color:var(--gold2);font-weight:900}
+.stat span{font-size:13px;color:#c9d3ea}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* 공통 섹션 */
+section{padding:84px 0}
+section.alt{background:var(--bg2)}
+.eyebrow{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:1px}
+h2{font-size:clamp(26px,3.6vw,38px);margin:6px 0 12px;letter-spacing:-1px;font-weight:900}
+.lead{color:var(--sub);max-width:720px;margin:0 0 40px;font-size:16px}
+
+/* 강점 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+.feat .ic{font-size:28px;margin-bottom:10px}
+.feat h3{margin:0 0 8px;font-size:19px}
+.feat p{margin:0;color:var(--sub);font-size:15px}
+
+/* 강사진 */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+:root[data-theme="dark"] .tab.on{background:var(--gold);color:var(--navy)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab.on{background:var(--gold);color:var(--navy)}}
+.teachers{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.t{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.t .top{background:linear-gradient(140deg,var(--navy),var(--navy2));color:#fff;padding:22px;display:flex;gap:14px;align-items:center}
+.t .av{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:22px;flex:none}
+.t .nm{font-size:20px;font-weight:900}
+.t .sj{font-size:12px;color:var(--gold2);font-weight:700}
+.t ul{margin:0;padding:18px 22px 6px 38px;color:var(--sub);font-size:14px}
+.t ul li{margin-bottom:4px}
+.t .q{margin:auto 22px 20px;padding-top:12px;border-top:1px dashed var(--line);font-size:14px;color:var(--ink);font-weight:500}
+
+/* 강소장 */
+.director{display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:center}
+@media(max-width:860px){.director{grid-template-columns:1fr}}
+.dcard{background:linear-gradient(150deg,var(--navy),var(--navy2));color:#fff;border-radius:22px;padding:34px}
+.dcard h3{font-size:28px;margin:0 0 6px}
+.dcard p{color:#cfd8ee;margin:0}
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.topics div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px;font-weight:500}
+@media(max-width:560px){.topics{grid-template-columns:1fr}}
+
+/* 합격 실적 */
+.gallery{columns:3 320px;column-gap:16px}
+.gallery button{padding:0;font:inherit;width:100%;cursor:zoom-in;display:block;margin-bottom:16px;break-inside:avoid;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.gallery img{width:100%;transition:transform .3s}
+.gallery button:hover img{transform:scale(1.02)}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+.more{text-align:center;margin-top:20px}
+.lb{position:fixed;inset:0;background:rgba(5,10,25,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.lb.open{display:flex}
+.lb img{max-height:90vh;border-radius:10px}
+.lb .x{position:absolute;top:14px;right:20px;color:#fff;font-size:34px;background:none;border:0;cursor:pointer}
+.lb .pv,.lb .nx{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:40px;background:none;border:0;cursor:pointer;padding:10px}
+.lb .pv{left:8px}.lb .nx{right:8px}
+
+/* 프로그램 */
+.prog{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:860px){.prog{grid-template-columns:1fr}}
+.p{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:22px 24px}
+.p h3{margin:0 0 6px;font-size:18px}
+.p p{margin:0;color:var(--sub);font-size:15px}
+
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:860px){.ev{grid-template-columns:1fr}}
+.evc{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.evc.ns{background:#fff;color:#0f1d3a;border:6px solid #1f4fd1;padding:26px;position:relative}
+.evc.ns .br{display:flex;align-items:center;gap:10px}
+.evc.ns .br img{width:52px;height:52px}
+.evc.ns .open{background:#ff7a1a;color:#fff;font-weight:900;font-size:13px;padding:2px 10px;border-radius:6px}
+.evc.ns .bn{color:#1f4fd1;font-weight:900;font-size:17px;display:block}
+.evc.ns .circ{position:absolute;right:22px;top:22px;width:92px;height:92px;border-radius:50%;background:#ff7a1a;color:#fff;display:grid;place-items:center;text-align:center;font-weight:900;line-height:1;box-shadow:0 0 0 8px #ffe3cf}
+.evc.ns .circ b{font-size:34px;display:block}
+.evc.ns h3{font-size:28px;margin:22px 0 4px;letter-spacing:-1px}
+.evc.ns .cl{color:#ff7a1a;font-weight:900;font-size:21px}
+.evc.ns .dt{margin:10px 0 14px;color:#374151}
+.evc.ns .tg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.evc.ns .tg span{border:2px solid #1f4fd1;color:#1f4fd1;border-radius:999px;padding:3px 14px;font-weight:700}
+.evc.ns .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:18px}
+.evc.ns .thumbs button{padding:0;background:none;cursor:zoom-in;border-radius:8px;overflow:hidden;border:1px solid #e5e8ef}
+.evbtn{border:0;font:inherit;width:100%;cursor:pointer;display:block;text-align:center;background:#ff7a1a;color:#fff;font-weight:900;font-size:18px;padding:15px;border-radius:14px;margin-top:auto}
+.evc.js{background:#0b1a33;padding:26px;align-items:center}
+.evc.js button.pst{padding:0;border:0;background:none;cursor:zoom-in;display:block;max-width:420px;width:100%;border-radius:12px;overflow:hidden}
+.evc.js .tel{display:block;text-align:center;background:#7fe3f5;color:#0b1a33;font-weight:900;font-size:18px;padding:15px;border-radius:14px;margin-top:18px;width:100%}
+.evc.js p{color:#cfe6f5;font-size:14px;margin:12px 0 0;text-align:center}
+/* 상담 */
+.contact{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;border-radius:24px;padding:44px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px}
+@media(max-width:860px){.contact{grid-template-columns:1fr;padding:30px}}
+.contact h2{color:#fff}
+.contact p{color:#cfd8ee}
+.info div{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;gap:14px}
+.info b{min-width:84px;color:var(--gold2)}
+.todo{display:inline-block;background:#fff3cd;color:#7a5a00;border-radius:6px;padding:0 6px;font-size:12px;font-weight:700}
+footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="mark">독</span><span>대치독한수능학원<small>송도캠퍼스 · 독한 수능 리더</small></span></a>
+    <nav class="menu" id="menu">
+      <a href="#about">학원소개</a>
+      <a href="#teachers">강사진</a>
+      <a href="#strategy">입시전략</a>
+      <a href="#results">합격실적</a>
+      <a href="#events">논술·설명회</a>
+      <a href="#programs">프로그램</a>
+      <a href="#contact">상담문의</a>
+    </nav>
+    <a class="cta" href="#contact">상담 예약</a>
+    <button class="burger" aria-label="메뉴" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="tag">대치 한티역 독수리의대관 강사진 · 송도 12월 중순 개원 예정</span>
+    <h1>대치의 수능 강의를<br><em>송도에서 그대로.</em></h1>
+    <p>소수정예 집중관리로 4등급을 1등급으로, 1등급을 만점으로. 대치동 최상위권을 가르치는 강사진과 김엄마 관리형 독서실의 관리 노하우가 송도에서 만납니다.</p>
+    <div class="btns">
+      <a class="btn gold" href="#contact">입학 상담 예약</a>
+      <a class="btn ghost" href="#teachers">강사진 보기</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>약 250명</b><span>26수능 언어와 매체 만점자 배출 (류성훈T 수강생)</span></div>
+      <div class="stat"><b>3년 연속</b><span>24·25·26 수능 언매 적중 (김호랑T)</span></div>
+      <div class="stat"><b>26명</b><span>국어·수학·영어·탐구·논술 전문 강사진 + 입시전략 강소장</span></div>
+      <div class="stat"><b>7년</b><span>김엄마 관리형 독서실 최상위권 합격 노하우</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">WHY 독한수능</div>
+    <h2>합격이 최우선인 수업</h2>
+    <p class="lead">대형 강의가 아닌 소수정예 수업에서, 강사가 학생 한 명 한 명의 답안과 성적을 직접 확인합니다. 수업 → 테스트 → 피드백 → 관리까지 한 곳에서 끝납니다.</p>
+    <div class="grid3">
+      <div class="feat"><div class="ic">🎯</div><h3>소수정예 집중관리</h3><p>강사가 직접 답안지를 확인하고 논리적 오류를 바로잡는 1:1 첨삭. 매주 주관식 테스트와 결과 문자 발송으로 학부모님도 진도를 확인합니다.</p></div>
+      <div class="feat"><div class="ic">🏫</div><h3>대치 현장 강사진</h3><p>강남대성·대치 시대인재·두각 등 대치동 현장에서 검증된 강사들이 독수리의대관과 같은 커리큘럼으로 수업합니다.</p></div>
+      <div class="feat"><div class="ic">📒</div><h3>김엄마 관리 시스템</h3><p>전국 최고 수준의 관리력을 자랑하는 김엄마 관리형 독서실과 연계해 출결·자습·생활을 함께 관리합니다.</p></div>
+      <div class="feat"><div class="ic">📝</div><h3>실전 모의고사</h3><p>대성 더프리미엄·시대인재 서바이벌 등 학교 현장 모의고사로 실제 수능과 같은 환경에서 실전 감각을 완성합니다.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>데이터 기반 입시전략</h3><p>성적 분석과 정시 합격 예측, 학생부 탐구 로드맵까지. 강소장의 1:1 정밀 진단 컨설팅을 받을 수 있습니다.</p></div>
+      <div class="feat"><div class="ic">🎥</div><h3>보강 걱정 없는 수업</h3><p>결석 시 수업 녹화본을 제공하고, BAND 앱으로 실시간 질의응답을 받습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="teachers">
+  <div class="wrap">
+    <div class="eyebrow">TEACHERS</div>
+    <h2>강사진</h2>
+    <p class="lead">대치 독수리의대관 강사진입니다. 과목을 눌러 보세요.</p>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-f="all">전체</button>
+      <button class="tab" data-f="국어">국어</button>
+      <button class="tab" data-f="수학">수학</button>
+      <button class="tab" data-f="영어">영어</button>
+      <button class="tab" data-f="탐구">탐구</button>
+      <button class="tab" data-f="논술">논술</button>
+    </div>
+    <div class="teachers" id="tlist"></div>
+  </div>
+</section>
+
+<section id="strategy">
+  <div class="wrap director">
+    <div class="dcard">
+      <div class="eyebrow">ADMISSION STRATEGY</div>
+      <h3>강소장의 대입전략</h3>
+      <p>고교학점제·5등급제 내신, 권장과목, 학생부 탐구 로드맵, 대학별 전형 변화까지. 매주 연재되는 입시 칼럼과 1:1 정밀 진단 컨설팅으로 우리 아이에게 맞는 전형을 찾아 드립니다.</p>
+    </div>
+    <div class="topics">
+      <div>📌 권장과목의 의미와 전략적 과목 선택법</div>
+      <div>📌 5등급제 내신, 대학이 변별력을 고민하는 이유</div>
+      <div>📌 의약계열 · 생명공학 탐구 로드맵</div>
+      <div>📌 반도체 · 인공지능 · 신소재 탐구 로드맵</div>
+      <div>📌 경영 · 경제 · 국제 · 언론 계열 탐구 로드맵</div>
+      <div>📌 2027 고려대 · 성균관대 · 한양대 · 서강대 입시 분석</div>
+      <div>📌 2027 지역의사제 전형과 탐구 로드맵</div>
+      <div>📌 서울대 구술면접 대비 전략</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="results">
+  <div class="wrap">
+    <div class="eyebrow">RESULTS</div>
+    <h2>합격 실적 & 수기</h2>
+    <p class="lead">“5등급은 1등급으로, 1등급은 100점으로.” 독수리의대관 강사진과 함께한 학생들의 실제 정시 합격 수기와 성적 변화입니다. 의·치·약·한·수 및 SKY 합격 사례를 확인하세요.</p>
+    <div class="gallery" id="gallery"></div>
+    <div class="more"><button class="btn gold" id="moreBtn" style="border:0;cursor:pointer">수기 더 보기</button></div>
+    <p class="note">※ 수기와 성적표는 동의를 받은 제자들에 한해 공개하며, 학생 이름은 가려서 게시합니다.</p>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="eyebrow">SPECIAL</div>
+    <h2>논술 파이널 · 정시 전략 설명회</h2>
+    <p class="lead">수능 직후 독수리의대관에서 진행하는 논술 파이널 강좌와 정시 최종지원전략 설명회입니다. 송도 학생도 신청할 수 있습니다.</p>
+    <div class="ev">
+      <div class="evc ns">
+        <div class="br"><img src="img/promo/dokdo-logo.png" alt="대치 독수리 로고"><div><span class="open">OPEN</span><span class="bn">독수리의대관</span></div></div>
+        <div class="circ"><div><b>12</b>시간</div></div>
+        <h3>2027 파이널 논술 강좌</h3>
+        <div class="cl">All Day Clinic</div>
+        <div class="dt">11.20(금) ~ 12.4(금) · 매일 10시 ~ 22시</div>
+        <div class="tg"><span>인문</span><span>약술</span><span>수리</span><span>의약</span></div>
+        <div class="thumbs" id="nsThumbs"></div>
+        <button class="evbtn" id="nsOpen">강좌 안내 보기 (13장)</button>
+      </div>
+      <div class="evc js">
+        <button class="pst" id="jsOpen"><img src="img/promo/jungsi-poster.jpg" alt="2027 정시 최종지원전략 설명회 포스터: 12월 5일(토) 오후 2시 독수리의대관"></button>
+        <a class="tel" href="tel:01051590974">설명회 문의 010-5159-0974</a>
+        <p>12월 5일(토) 오후 2시 · 독수리의대관 (한티역 3번 출구)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="programs">
+  <div class="wrap">
+    <div class="eyebrow">PROGRAMS</div>
+    <h2>프로그램</h2>
+    <p class="lead">정규 수업과 함께 시기별 특강·모의고사·논술 프로그램을 운영합니다.</p>
+    <div class="prog">
+      <div class="p"><h3>정규 수능반 (국어 · 수학 · 영어 · 탐구)</h3><p>과목별 전담 강사의 소수정예 수업. 개인 · 팀 · 오픈반으로 운영합니다.</p></div>
+      <div class="p"><h3>언어와 매체 집중 특강</h3><p>품사부터 중세 국어까지 수능 문법 전 범위. 매주 주관식 쪽지시험과 개별 피드백.</p></div>
+      <div class="p"><h3>현장 실전 모의고사</h3><p>대성 더프리미엄 · 시대인재 서바이벌 프로를 실제 학교 시험장 환경에서 응시. 외부생도 신청 가능합니다.</p></div>
+      <div class="p"><h3>의대 · 자연계 수리논술</h3><p>UCLA·서울대 수학과 출신 조일환T의 1:1 직접 첨삭. 의학계열 및 연세대 자연계열 논술 대비.</p></div>
+      <div class="p"><h3>파이널 논술 올데이 클리닉</h3><p>11.20(금)~12.4(금) 매일 10시~22시, 하루 12시간 대학별 기출 분석과 실전 답안 작성·첨삭. <a href="#events" style="color:var(--gold);font-weight:700">자세히 →</a></p></div>
+      <div class="p"><h3>정시 최종지원전략 설명회 · 1:1 컨설팅</h3><p>12월 5일(토) 오후 2시 2027 정시 최종지원전략 설명회. 성적 분석 기반 정시 합격 예측과 학생부 진단 컨설팅. <a href="#events" style="color:var(--gold);font-weight:700">자세히 →</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">CONTACT</div>
+        <h2>입학 상담 예약</h2>
+        <p>학교·학년·이름을 문자로 남겨 주시면 상담 일정을 안내해 드립니다. 송도캠퍼스는 12월 중순 개원 예정이며, 개원 전에는 대치 독수리의대관 본관에서 상담해 드립니다.</p>
+        <div class="btns" style="margin-top:20px"><a class="btn gold" href="sms:01036338240">문자로 상담 예약</a></div>
+      </div>
+      <div class="info">
+        <div><b>송도캠퍼스</b><span>인천 연수구 컨벤시아대로130번길 8, 6층<br>(송도동 22-20) · 12월 중순 개원 예정</span></div>
+        <div><b>대치 본관</b><span>서울 강남구 도곡로 70길 5, 2층 (한티역 3번 출구)</span></div>
+        <div><b>대치 문의</b><span>02-555-0974 · 010-3633-8240</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">대치독한수능학원 송도캠퍼스 · 독한 수능 리더 독수리의대관<br>© 2026 대치독한수능학원. All rights reserved.</div>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="x" aria-label="닫기">×</button>
+  <button class="pv" aria-label="이전">‹</button>
+  <img alt="합격 수기 크게 보기">
+  <button class="nx" aria-label="다음">›</button>
+</div>
+
+<script>
+const T=[
+ {n:'장의순',s:'국어',c:['서울대학교 국어국문학과','대치 시대인재 국어','KBS · TV조선 의대 입시 인터뷰'],q:'“5등급은 1등급으로, 1등급은 100점으로.”'},
+ {n:'류성훈',s:'국어',c:['고려대학교 국어교육과','강남대성 언어와 매체 최상위 평가 강사','대치 두각','26수능 언매 만점자 약 250명 배출'],q:'문법을 “안다”는 착각을 깨는 수업'},
+ {n:'김호랑',s:'국어',c:['서울대학교 국어교육과','메가스터디 러셀 강남 · 대치 독수리의대관','24·25·26 수능 언매 적중','언매 교재 『문법 초석』 집필'],q:'매주 주관식 테스트와 개별 피드백'},
+ {n:'최현재',s:'국어',c:['고려대학교','바탕 · 시대 · 상상 모의고사 출제진'],q:'출제자의 눈으로 읽는 수능 국어'},
+ {n:'김경한',s:'수학',c:['고려대학교 수학교육과','강남대성','두각 · EBSi · 대성마이맥'],q:'속도와 킬러 문항 둘 다 잡는 로드맵'},
+ {n:'김병우',s:'수학',c:['고려대학교 수학교육과','대치 시대인재'],q:'개념에서 킬러까지 흔들리지 않는 수학'},
+ {n:'김준교',s:'수학',c:['서울과학고 졸업','KAIST 졸업'],q:'원리를 꿰뚫는 수학적 사고력'},
+ {n:'이창환',s:'수학',c:['서울대학교 수학과','25년 이상 내신 · 수능 수학 지도','포철고 · 천안북일고 · 하늘고 논술 심층 지도','명인학원 · 대찬학원','『고수수학』 · 『서울대 심층수학 해설집』'],q:'유형 암기 대신 ‘수학적 독해력’'},
+ {n:'소영윤',s:'수학',c:['25년 이상 내신 · 수능 수학 지도','대치동 최상위권 현장 강의'],q:'평가원 신유형에 강한 개념 학습'},
+ {n:'조일환',s:'수학',c:['서울대학교 수학과 학사 · 석사 수료','UCLA 수학과 석사 · 응용수학 박사 과정','가톨릭대 · 성균관대 의약 논술 강의'],q:'의대 · 연세대 자연계 수리논술 1:1 첨삭'},
+ {n:'고연승',s:'영어',c:['연세대학교 영어영문학과','강남대성'],q:'수능 영어 1등급을 흔들림 없이'},
+ {n:'최한근',s:'탐구',c:['고려대학교 생물교육과','강남대성'],t:'생명과학',q:'생명과학 고득점 전략'},
+ {n:'이정태',s:'탐구',c:['서울대학교 문화인류학과','미시간주립대 석사','아폴론 · 이슈앤스카이 · 전 중앙일보 기자','『밥상에 차려진 통합논술』'],t:'통합사회 · 인문논술',q:'내신 수행평가부터 논술까지'},
+ {n:'안재훈',s:'논술',c:['서울대학교 철학과 · 서울대 행정대학원','하나고 · 포항제철고 출강','저서 다수'],t:'인문 · 약술국어',q:'논제가 요구하는 구조로 쓰는 훈련'},
+ {n:'김광수',s:'논술',c:['서울대학교 국문과 · 국문과 박사','『청산 약술국어해설집』'],t:'인문 · 약술국어',q:'약술국어 EBS 연계 완성'},
+ {n:'강명필',s:'논술',c:['서울대학교 인류학과 · 연세대 MBA','다빈치논술 · 이슈앤투데이'],t:'인문논술',q:'대학별 출제 유형 맞춤 답안'},
+ {n:'변기윤',s:'논술',c:['연세대 · 서울대 행정대학원','가천대 겸임교수','이투스 · 로고스'],t:'인문 · 약술논술',q:'약술형 논술 실전 첨삭'},
+ {n:'서현우',s:'논술',c:['성균관대 법대 학사 · 석사','건국대 전임교수','하나고 · 포항제철고 출강','서울대 · 고려대 · 한양대 특강'],t:'인문논술',q:'제시문 분석에서 답안 완성까지'},
+ {n:'손영호',s:'논술',c:['서울대학교 수학과 · 포항공대 석사','미래탐구 · 포철고 · 천안북일고 등 자사고 · 지자체 논술 강의'],t:'수리논술',q:'수리논술 실전 훈련'},
+ {n:'황송주',s:'논술',c:['서울대학교 수학과','메타 논술 · 자사고 및 지자체 논술 강의','『강남 일번지 엄마들의 수험생 자녀 관리』'],t:'수리 · 약술수학',q:'대학별 필수 주제 완성'},
+ {n:'박성하',s:'논술',c:['서울대학교 수학교육과','천안북일고 · 미래탐구 · 아폴론 · 종로학원','『해법논술』'],t:'수리논술',q:'풀이를 논리로 쓰는 법'},
+ {n:'임창훈',s:'논술',c:['서울대학교 수학과 · 포항공대 석사','가톨릭대 등 주요 의대 논술 강의'],t:'의대 수리논술',q:'의대 논술 실전 대비'},
+ {n:'정혜경',s:'논술',c:['서울대학교 물리교육과 · NYU 물리학 박사','EBS 물리 강사 · 수능 해설 위원','메가스터디 논술 위원','천재교육 물리Ⅰ·Ⅱ'],t:'과학논술 · 물리',q:'물리 개념을 논술 답안으로'},
+ {n:'홍진수',s:'논술',c:['서울대학교 물리교육과','대성마이맥 인강 · 미래탐구 · 다원','자이스토리 물리학'],t:'과학논술 · 물리',q:'과학논술 물리 완성'},
+ {n:'원현주',s:'논술',c:['서울대학교 생명교육과 · 생명과학부 대학원','시대인재 · 강남대성 마이맥'],t:'과학논술 · 생명',q:'생명과학 제시문 해석력'},
+ {n:'고경률',s:'논술',c:['서울대학교 응용화학부','시대인재 · 강남대성 · 두각'],t:'과학논술 · 화학',q:'화학 논술 실전 첨삭'},
+];
+const list=document.getElementById('tlist');
+function drawT(f){
+  list.innerHTML=T.filter(t=>f==='all'||t.s===f).map(t=>`
+    <div class="t"><div class="top"><div class="av">${t.n[0]}</div>
+      <div><div class="sj">${t.t||t.s}</div><div class="nm">${t.n} 선생님</div></div></div>
+      <ul>${t.c.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="q">${t.q}</div></div>`).join('');
+}
+drawT('all');
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('.tab'); if(!b) return;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b)); drawT(b.dataset.f);
+});
+
+const N=52, imgs=Array.from({length:N},(_,i)=>`img/results/r${String(i+1).padStart(2,'0')}.jpg`);
+let shown=0; const g=document.getElementById('gallery'), more=document.getElementById('moreBtn');
+function showMore(){
+  const next=imgs.slice(shown,shown+12);
+  next.forEach((src,k)=>{const i=shown+k;const b=document.createElement('button');b.innerHTML=`<img loading="lazy" src="${src}" alt="합격 수기 ${i+1}">`;b.onclick=()=>openLb(i);g.appendChild(b);});
+  shown+=next.length; if(shown>=N) more.style.display='none';
+}
+more.onclick=showMore; showMore();
+const lb=document.getElementById('lb'), li=lb.querySelector('img'); let cur=0, L=imgs;
+function openLb(i,list){if(list)L=list; else L=imgs; cur=i;li.src=L[i];lb.classList.add('open');}
+function step(d){cur=(cur+d+L.length)%L.length;li.src=L[cur];}
+const NS=Array.from({length:13},(_,i)=>`img/nonsul/n${String(i+1).padStart(2,'0')}.jpg`);
+const th=document.getElementById('nsThumbs');
+NS.slice(0,4).forEach((src,i)=>{const b=document.createElement('button');b.innerHTML=`<img loading="lazy" src="${src}" alt="논술 안내 ${i+1}">`;b.onclick=()=>openLb(i,NS);th.appendChild(b);});
+document.getElementById('nsOpen').onclick=()=>openLb(0,NS);
+document.getElementById('jsOpen').onclick=()=>openLb(0,['img/promo/jungsi-poster.jpg']);
+lb.querySelector('.x').onclick=()=>lb.classList.remove('open');
+lb.querySelector('.pv').onclick=e=>{e.stopPropagation();step(-1);};
+lb.querySelector('.nx').onclick=e=>{e.stopPropagation();step(1);};
+lb.onclick=e=>{if(e.target===lb) lb.classList.remove('open');};
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
+/* 페이지 안 이동은 스크립트로 — 미리보기 창(샌드박스)에서 #주소 링크가 막혀도 움직이게 */
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a) return;
+  const id=a.getAttribute('href').slice(1); const el=id==='top'?document.body:document.getElementById(id);
+  if(!el) return; e.preventDefault();
+  window.scrollTo({top:id==='top'?0:el.getBoundingClientRect().top+window.scrollY-64,behavior:'smooth'});
+  document.getElementById('menu').classList.remove('open');
+});
+</script>
+</body>
+</html>
