@@ -179,8 +179,10 @@ h1,h2,.hero h1,.logo>span,.dcard h3,.sd-box h2,.t .nm{font-family:"Noto Serif KR
 .ann{background:#111214;color:#fff;font-weight:500;font-size:13px;letter-spacing:.02em;padding:10px 12px}.ann a{color:#fff;border-bottom:1px solid #fff}.ann-k{color:#B9BBBF;margin-right:10px}
 header{background:#fff;color:#111214;border-bottom:1px solid #E4E4E1;backdrop-filter:none}
 .nav{height:78px}
-.logo .mark{display:none}
-.logo>span{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.logo .mark,.flogo .mark{display:grid;place-items:center;width:46px;height:46px;border-radius:0;background:#111214;color:#fff;font-family:"Noto Sans KR",sans-serif;font-weight:900;font-size:26px;flex:none}
+.flogo{display:inline-flex;align-items:center;gap:12px;color:#111214;font-family:"Noto Sans KR",sans-serif;font-weight:900;font-size:18px;margin-bottom:6px}.flogo .mark{width:34px;height:34px;font-size:19px}
+.foot-in{display:flex;flex-wrap:wrap;align-items:center;gap:24px 36px;text-align:left}.foot-in .emb{width:96px;height:auto}
+.logo>span{font-size:22px;font-family:"Noto Sans KR",sans-serif;font-weight:900;letter-spacing:-.01em;line-height:1.2}
 .logo small{color:#6A6D72;font-family:"IBM Plex Sans KR",sans-serif;font-size:11px;letter-spacing:.2em;font-weight:500}
 .menu a{opacity:1;color:#111214}.menu a:hover{color:var(--accent)}
 .cta{background:#fff;color:#111214;border:1px solid #111214;border-radius:0;padding:10px 20px;font-weight:600}
@@ -262,7 +264,7 @@ footer{border-top:1px solid #E4E4E1;color:#6A6D72;padding:56px 0 64px}
   <div class="wrap">
     <span class="tag">대치 한티역 본관 · 독한 수능 리더 독수리의대관</span>
     <h1>대치동 최상위권의<br><em>독한 수능.</em></h1>
-    <p>소수정예 집중관리로 4등급을 1등급으로, 1등급을 만점으로. 대치동 최상위권을 가르치는 강사진이 한티역에서 직접 가르칩니다. <b>12월 중순, 송도 2호관이 문을 엽니다.</b></p>
+    <p>소수정예 집중관리로 4등급을 1등급으로, 1등급을 만점으로. 대치동 최상위권 강사진이 한티역 본관에서 직접 강의합니다. <b>12월 중순, 송도 2호관이 문을 엽니다.</b></p>
     <div class="btns">
       <a class="btn gold" href="#book" data-book="">입학 상담 예약</a>
       <a class="btn ghost" href="#songdo">송도 2호관 개원 안내</a>
@@ -314,7 +316,7 @@ footer{border-top:1px solid #E4E4E1;color:#6A6D72;padding:56px 0 64px}
 <section class="alt" id="teachers">
   <div class="wrap">
     <div class="eyebrow">TEACHERS</div>
-    <h2>강사진</h2>
+    <h2>대치동 최상위권 강사진</h2>
     <p class="lead">대치 독수리의대관 강사진입니다. 과목을 눌러 보세요.</p>
     <div class="tabs" id="tabs">
       <button class="tab on" data-f="all">전체</button>
@@ -421,7 +423,7 @@ footer{border-top:1px solid #E4E4E1;color:#6A6D72;padding:56px 0 64px}
 </section>
 
 <footer>
-  <div class="wrap">대치독한수능학원 · 대치 한티역 본관 · 송도 2호관 · 독한 수능 리더 독수리의대관<br>© 2026 대치독한수능학원. All rights reserved.</div>
+  <div class="wrap foot-in"><img class="emb" src="img/promo/dokdo-logo.png" alt="대치 독수리 엠블럼"><div><span class="flogo"><span class="mark">독</span>대치독한수능학원</span><br>대치독한수능학원 · 대치 한티역 본관 · 송도 2호관 · 독한 수능 리더 독수리의대관<br>© 2026 대치독한수능학원. All rights reserved.</div></div>
 </footer>
 
 <div class="lb" id="lb">
