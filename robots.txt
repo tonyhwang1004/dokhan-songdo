@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://doksuri.co.kr/sitemap.xml
