@@ -181,7 +181,7 @@ footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
       <a href="#programs">프로그램</a>
       <a href="#contact">상담문의</a>
     </nav>
-    <a class="cta" href="#contact">상담 예약</a>
+    <a class="cta" href="#book" data-book="">상담 예약</a>
     <button class="burger" aria-label="메뉴" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
   </div>
 </header>
@@ -192,7 +192,7 @@ footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
     <h1>대치동 최상위권의<br><em>독한 수능.</em></h1>
     <p>소수정예 집중관리로 4등급을 1등급으로, 1등급을 만점으로. 대치동 최상위권을 가르치는 강사진이 한티역에서 직접 가르칩니다. <b>12월 중순, 송도 2호관이 문을 엽니다.</b></p>
     <div class="btns">
-      <a class="btn gold" href="#contact">입학 상담 예약</a>
+      <a class="btn gold" href="#book" data-book="">입학 상담 예약</a>
       <a class="btn ghost" href="#songdo">송도 2호관 개원 안내</a>
     </div>
     <div class="stats">
@@ -212,7 +212,7 @@ footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
         <h2>대치독한수능학원 <em>송도 2호관</em></h2>
         <p>대치 본관 강사진이 송도에서 같은 커리큘럼으로 가르칩니다. 송도 센트럴파크 인근 해온프라자 6층 — 송도·연수·인천 학생은 이제 대치까지 오지 않아도 됩니다.</p>
         <ul class="sd-pt"><li>대치 본관과 같은 강사진 · 같은 교재</li><li>소수정예 반 편성 (선착순 마감)</li><li>매주 테스트 · 학부모 결과 문자</li></ul>
-        <div class="btns"><a class="btn gold" href="sms:01036338240?body=%EC%86%A1%EB%8F%84%202%ED%98%B8%EA%B4%80%20%EC%83%81%EB%8B%B4%20%EC%98%88%EC%95%BD%20(%ED%95%99%EA%B5%90%C2%B7%ED%95%99%EB%85%84%C2%B7%EC%9D%B4%EB%A6%84)">송도 2호관 상담 예약</a><a class="btn ghost" href="https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%EB%8F%99%2022-20" target="_blank" rel="noopener">위치 보기</a></div>
+        <div class="btns"><a class="btn gold" href="#book" data-book="송도 2호관">송도 2호관 상담 예약</a><a class="btn ghost" href="https://map.naver.com/p/search/%EC%86%A1%EB%8F%84%EB%8F%99%2022-20" target="_blank" rel="noopener">위치 보기</a></div>
       </div>
       <div class="sd-r">
         <div><b>위치</b><span>인천 연수구 컨벤시아대로130번길 8 해온프라자 더 라운지 6층 (송도동 22-20)</span></div>
@@ -334,8 +334,8 @@ footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
       <div>
         <div class="eyebrow">CONTACT</div>
         <h2>입학 상담 예약</h2>
-        <p>학교·학년·이름을 문자로 남겨 주시면 상담 일정을 안내해 드립니다. 대치 본관과 송도 2호관 어느 쪽이든 상담 가능하며, 송도 2호관(12월 중순 개원) 상담은 개원 전까지 대치 본관에서 진행합니다.</p>
-        <div class="btns" style="margin-top:20px"><a class="btn gold" href="sms:01036338240">문자로 상담 예약</a></div>
+        <p>온라인으로 신청하시면 접수번호가 바로 나오고, 담당자가 연락드려 상담 일정을 안내해 드립니다. 대치 본관과 송도 2호관 어느 쪽이든 상담 가능하며, 송도 2호관(12월 중순 개원) 상담은 개원 전까지 대치 본관에서 진행합니다.</p>
+        <div class="btns" style="margin-top:20px"><a class="btn gold" href="#book" data-book="">온라인 상담 예약</a> <a class="btn ghost" href="sms:01036338240">문자로 문의</a></div>
       </div>
       <div class="info">
         <div><b>대치 본관</b><span>서울 강남구 도곡로 70길 5, 2층 (한티역 3번 출구)</span></div>
@@ -429,6 +429,113 @@ document.addEventListener('click',e=>{
   window.scrollTo({top:id==='top'?0:el.getBoundingClientRect().top+window.scrollY-64,behavior:'smooth'});
   document.getElementById('menu').classList.remove('open');
 });
+</script>
+<!-- 상담 예약 신청서 (2026-11-15) — 구글 시트 「대치독한수능학원 상담 예약 신청」에 저장, 접수번호 발급 -->
+<style>
+#bk-wrap{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(5,12,30,.6);padding:14px}
+#bk-wrap.on{display:flex}
+#bk{position:relative;width:100%;max-width:460px;max-height:94vh;overflow:auto;background:#fff;color:#111827;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+#bk .hd{background:linear-gradient(160deg,#0f1d3a,#16295a);color:#fff;padding:22px 22px 18px}
+#bk .hd b{display:block;font-size:21px;font-weight:900;margin-bottom:4px}
+#bk .hd span{font-size:13.5px;opacity:.85}
+#bk form{padding:16px 22px 20px}
+#bk label{display:block;font-size:13px;font-weight:700;color:#374151;margin:12px 0 5px}
+#bk label i{color:#e63946;font-style:normal}
+#bk input[type=text],#bk input[type=tel],#bk select,#bk textarea{width:100%;box-sizing:border-box;border:1px solid #d6dbe4;border-radius:10px;padding:11px 12px;font:inherit;font-size:15px;color:#111827;background:#fff}
+#bk textarea{min-height:70px;resize:vertical}
+#bk .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#bk .seg{display:flex;gap:8px}
+#bk .seg label,#bk .chk label{margin:0;font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px;border:1px solid #d6dbe4;border-radius:10px;padding:9px 12px;cursor:pointer}
+#bk .seg label{flex:1;justify-content:center}
+#bk .chk{display:flex;flex-wrap:wrap;gap:7px}
+#bk .agree{margin-top:14px;background:#f4f6fa;border-radius:10px;padding:10px 12px;font-size:12.3px;line-height:1.6;color:#4b5563}
+#bk .agree label{display:flex;gap:7px;align-items:center;margin:6px 0 0;font-size:13.5px;color:#111827}
+#bk .hp{position:absolute;left:-9999px}
+#bk button[type=submit]{width:100%;margin-top:16px;border:0;border-radius:12px;padding:14px;font:inherit;font-size:17px;font-weight:900;background:#d4a017;color:#0f1d3a;cursor:pointer}
+#bk button[type=submit]:disabled{opacity:.6}
+#bk .err{color:#c1121f;font-size:13.5px;margin-top:10px;min-height:1em}
+#bk .done{padding:30px 24px 26px;text-align:center}
+#bk .done .no{display:inline-block;margin:12px 0 8px;background:#fff7d6;border:2px dashed #d4a017;border-radius:14px;padding:12px 22px;font-size:15px;color:#0f1d3a}
+#bk .done .no b{display:block;font-size:34px;font-weight:900}
+#bk .x{position:absolute;top:10px;right:12px;background:rgba(255,255,255,.18);border:0;color:#fff;width:32px;height:32px;border-radius:50%;font-size:20px;line-height:32px;cursor:pointer}
+</style>
+<div id="bk-wrap" role="dialog" aria-modal="true" aria-labelledby="bk-title">
+  <div id="bk">
+    <button class="x" type="button" aria-label="닫기" data-bk-close>×</button>
+    <div class="hd"><b id="bk-title">상담 예약 신청</b><span>남겨 주시면 담당자가 연락드려 상담 일정을 잡아 드립니다.</span></div>
+    <form id="bk-form" novalidate>
+      <label>상담 지점 <i>*</i></label>
+      <div class="seg">
+        <label><input type="radio" name="campus" value="송도 2호관" checked> 송도 2호관</label>
+        <label><input type="radio" name="campus" value="대치 본관"> 대치 본관</label>
+      </div>
+      <div class="two">
+        <div><label for="bk-name">학생 이름 <i>*</i></label><input id="bk-name" type="text" name="name" maxlength="30" autocomplete="name" required></div>
+        <div><label for="bk-grade">학년 <i>*</i></label>
+          <select id="bk-grade" name="grade" required><option value="">선택</option><option>예비고1</option><option>고1</option><option>고2</option><option>고3</option><option>N수</option><option>기타</option></select></div>
+      </div>
+      <label for="bk-school">학교</label><input id="bk-school" type="text" name="school" maxlength="40" placeholder="예: 송도고">
+      <label for="bk-phone">연락처 (학생 또는 학부모) <i>*</i></label><input id="bk-phone" type="tel" name="phone" maxlength="13" inputmode="numeric" placeholder="010-0000-0000" required>
+      <label>희망 과목</label>
+      <div class="chk">
+        <label><input type="checkbox" name="sub" value="국어"> 국어</label><label><input type="checkbox" name="sub" value="수학"> 수학</label><label><input type="checkbox" name="sub" value="영어"> 영어</label><label><input type="checkbox" name="sub" value="탐구"> 탐구</label><label><input type="checkbox" name="sub" value="논술"> 논술</label>
+      </div>
+      <label for="bk-when">희망 상담 시간</label><input id="bk-when" type="text" name="when" maxlength="100" placeholder="예: 평일 저녁 7시 이후, 토요일 오전">
+      <label for="bk-memo">문의 내용</label><textarea id="bk-memo" name="memo" maxlength="1000" placeholder="현재 성적, 궁금한 점 등을 자유롭게 적어 주세요."></textarea>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="agree">개인정보 수집·이용 안내 — 수집 항목: 학생 이름, 학교, 학년, 연락처, 문의 내용 / 목적: 상담 일정 안내 / 보유 기간: 상담 후 1년, 이후 파기. 동의하지 않으면 신청할 수 없습니다.
+        <label><input type="checkbox" name="agree" value="Y" required> 개인정보 수집·이용에 동의합니다 (필수)</label></div>
+      <div class="err" id="bk-err" role="alert"></div>
+      <button type="submit">상담 예약 신청하기</button>
+    </form>
+    <div class="done" id="bk-done" hidden>
+      <div style="font-size:40px">✅</div>
+      <div style="font-size:19px;font-weight:900;margin-top:6px">상담 신청이 접수되었습니다</div>
+      <div class="no">접수번호<b id="bk-no">-</b></div>
+      <p style="color:#4b5563;font-size:14px;line-height:1.6;margin:6px 0 16px">담당자가 남겨 주신 번호로 연락드립니다.<br>급한 문의: <a href="tel:01036338240" style="color:#0f1d3a;font-weight:800">010-3633-8240</a></p>
+      <button type="button" data-bk-close style="border:0;background:#0f1d3a;color:#fff;border-radius:10px;padding:11px 26px;font:inherit;font-weight:800;cursor:pointer">닫기</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var URL='https://script.google.com/macros/s/AKfycbza7B4LZn_pgTFH1dGt0aWRwKpgqP6_z9QYIQ-Kcel92D5ATcValpcbCC0VQJRDKkQwsg/exec';
+  var w=document.getElementById('bk-wrap'),f=document.getElementById('bk-form'),err=document.getElementById('bk-err'),done=document.getElementById('bk-done');
+  function open(campus){
+    f.hidden=false;done.hidden=true;err.textContent='';
+    if(campus){var r=f.querySelector('input[name=campus][value="'+campus+'"]');if(r)r.checked=true;}
+    w.classList.add('on');setTimeout(function(){f.elements.name.focus();},50);
+    try{if(typeof gtag==='function')gtag('event','booking_open',{campus:campus||''});}catch(e){}
+  }
+  function close(){w.classList.remove('on');}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-book]');if(a){e.preventDefault();open(a.getAttribute('data-book'));return;}
+    if(e.target===w||e.target.closest('[data-bk-close]'))close();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  if(location.hash==='#book')open('');
+  f.phone.addEventListener('input',function(){var d=this.value.replace(/\D/g,'').slice(0,11);this.value=d.length<4?d:d.length<8?d.slice(0,3)+'-'+d.slice(3):d.slice(0,3)+'-'+d.slice(3,d.length-4)+'-'+d.slice(-4);});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();err.textContent='';
+    var d=f.phone.value.replace(/\D/g,'');
+    if(!f.elements.name.value.trim())return err.textContent='학생 이름을 적어 주세요.';
+    if(!f.grade.value)return err.textContent='학년을 골라 주세요.';
+    if(!/^01[016789]\d{7,8}$/.test(d))return err.textContent='휴대폰 번호를 정확히 적어 주세요.';
+    if(!f.agree.checked)return err.textContent='개인정보 수집·이용에 동의해 주세요.';
+    var b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='보내는 중…';
+    var q=new URLSearchParams();
+    ['campus','name','grade','school','phone','when','memo','website'].forEach(function(k){var el=f.elements[k];q.append(k,el?(el.value||''):'');});
+    q.set('campus',(f.querySelector('input[name=campus]:checked')||{}).value||'');
+    q.append('subjects',[].map.call(f.querySelectorAll('input[name=sub]:checked'),function(c){return c.value;}).join(', '));
+    q.append('agree','Y');
+    fetch(URL,{method:'POST',body:q}).then(function(r){return r.json();}).then(function(j){
+      if(!j.ok)throw new Error(j.error||'접수에 실패했습니다.');
+      document.getElementById('bk-no').textContent=j.no+'번';f.hidden=true;done.hidden=false;f.reset();
+      try{if(typeof gtag==='function')gtag('event','booking_submit',{campus:q.get('campus')});}catch(e){}
+    }).catch(function(x){err.textContent=(x&&x.message&&x.message.indexOf('fetch')<0?x.message:'접수 중 문제가 생겼습니다.')+' 010-3633-8240으로 문자 주세요.';})
+    .finally(function(){b.disabled=false;b.textContent='상담 예약 신청하기';});
+  });
+})();
 </script>
 </body>
 </html>
