@@ -281,6 +281,22 @@ section.v2-sec.gray{background:#F4F4F2;padding:120px 0}
 .v2-fac .sj{font-size:13px;letter-spacing:.08em;color:#6A6D72}
 .v2-fac h3{margin:6px 0 0;font-family:"Noto Serif KR",serif;font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.35}
 .v2-fac ul{margin:16px 0 0;padding:14px 0 0;list-style:none;border-top:1px solid #DCDCD8;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.6;color:#45484D}
+/* 사진 위에 마우스를 올리면 약력이 덮여 올라온다 (2026-11-16 사장님 요청).
+   손가락으로 쓰는 기기(hover 없음)에서는 아무 일도 없다 — 아래 글이 그대로 보이므로. */
+.v2-fac .phw{position:relative;overflow:hidden;background:#EDEDEB;cursor:default}
+.v2-fac .phw .ph{display:block;transition:transform .5s ease}
+.v2-fac .pop{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,11,12,.96) 55%,rgba(10,11,12,.78));color:#fff;padding:24px 22px;display:flex;flex-direction:column;justify-content:flex-end;opacity:0;transition:opacity .3s ease;pointer-events:none;overflow:auto}
+.v2-fac .pop .psj{font-size:12px;letter-spacing:.09em;color:#B9BCC0}
+.v2-fac .pop .pnm{margin-top:4px;font-family:"Noto Serif KR",serif;font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.v2-fac .pop ul{margin:14px 0 0;padding:13px 0 0;border-top:1px solid rgba(255,255,255,.28);list-style:none;display:flex;flex-direction:column;gap:7px;font-size:13px;line-height:1.55;color:#E8E9EB}
+.v2-fac .pop li{position:relative;padding-left:10px}
+.v2-fac .pop li::before{content:"";position:absolute;left:0;top:9px;width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.55)}
+@media (hover:hover) and (pointer:fine){
+  .v2-fac .phw:hover .pop,.v2-fac .phw:focus-visible .pop{opacity:1}
+  .v2-fac .phw:hover .ph{transform:scale(1.04)}
+}
+.v2-fac .phw:focus-visible{outline:2px solid #111214;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.v2-fac .pop,.v2-fac .phw .ph{transition:none}}
 .v2-res{display:flex;flex-wrap:wrap;gap:48px 80px;margin-bottom:72px}
 .v2-res-l{flex:1 1 320px}.v2-res-l p:last-child{color:#45484D;max-width:360px;margin:16px 0 0}
 .v2-rows{flex:999 1 560px;min-width:0;border-top:1px solid #111214}
@@ -541,7 +557,7 @@ const T=[
  {n:'최정윤',s:'탐구',t:'통합과학',c:['서울대학교','스카이에듀','Mensa 정회원','MTN 머니투데이 매거진S 출연']},
  {n:'고아름',s:'탐구',t:'통합사회',c:[]},
  {n:'이예섭',s:'탐구',t:'통합사회',c:['현) 미래탐구 마포고등센터 사회탐구 강사','현) 강남대성학원 사회탐구 강사','현) 시대인재 특목관 강사','전) 대성마이맥 인터넷 강의 사회탐구 강사','강남대성학원 연속 강의평가 1위','강남대성학원 강의평가 우수 강사 (수강생 설문 기준)']},
- {n:'이창환',s:'수학',c:['서울대학교 수학과','명인학원 · 대찬학원','25년 이상 내신 · 수능 수학 지도','포철고 · 천안북일고 · 하늘고 논술 심층 지도','『고수수학』 · 『서울대 심층수학 해설집』']},
+ {n:'이창환',s:'수학',c:['서울대학교 수학과','현) 아폴론교육 · 명인학원 · 미래탐구학원','『고수수학』 시리즈','『서울대 수학 심층 해설집』 (조합 · 기하)']},
  {n:'최현재',s:'국어',t:'국어 · 고3 내신',c:['고려대학교 졸업','메가로스쿨 LEET 언어이해 전국모의고사 출제 · 검토 위원 (2018년~)','상상 모의고사 인문 분야 독서 출제 (2021년~)','강대K 모의고사 독서 출제 · 검토 (2021년~)','바탕 모의고사 사회 분야 독서 출제 (2021년~)']},
  {n:'손영호',s:'수학',c:['서울대학교 수학과 · 포항공대 석사','미래탐구 · 포철고 · 천안북일고 등 자사고 · 지자체 논술 강의']},
  {n:'김광수',s:'국어',c:['서울대학교 국어국문학과 박사','전) 시대인재','『청산 약술국어해설집』']},
@@ -568,7 +584,7 @@ const T=[
 ];
 const list=document.getElementById('tlist');
 /* 사진: img/teachers/이름.jpg 를 PHOTO 에 적으면 사진, 없으면 성 한 글자 */
-const PHOTO={};['류성훈','전현석','함정민','홍진수','최정윤','이예섭','최현재'].forEach(n=>PHOTO[n]='img/teachers/'+n+'.jpg');
+const PHOTO={};['류성훈','전현석','함정민','홍진수','최정윤','이예섭','이창환','최현재'].forEach(n=>PHOTO[n]='img/teachers/'+n+'.jpg');
 const FIRST=[]; /* 배열 순서 그대로 (11/16 사장님이 준 순서) */
 T.sort((a,b)=>{const x=FIRST.indexOf(a.n),y=FIRST.indexOf(b.n);return (x<0?99:x)-(y<0?99:y);});
 let tOpen=false;
@@ -576,10 +592,14 @@ function drawT(f){
   let arr=T.filter(t=>f==='all'||t.s===f);
   const cut=f==='all'&&!tOpen&&arr.length>9; if(cut) arr=arr.slice(0,9);
   document.getElementById('tAll').parentNode.style.display=cut?'':'none';
-  list.innerHTML=arr.map(t=>`
-    <article>${PHOTO[t.n]?`<img class="ph" loading="lazy" src="${PHOTO[t.n]}" alt="${t.n} 강사">`:`<div class="ph" role="img" aria-label="${t.n} 강사 사진 자리">${t.n[0]}</div>`}
-      <div><span class="sj">${t.t||t.s}</span><h3>${t.n}</h3>
-      ${t.c.length?`<ul>${t.c.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}</div></article>`).join('');
+  list.innerHTML=arr.map(t=>{
+    const 사진=PHOTO[t.n]?`<img class="ph" loading="lazy" src="${PHOTO[t.n]}" alt="${t.n} 강사">`:`<div class="ph" role="img" aria-label="${t.n} 강사 사진 자리">${t.n[0]}</div>`;
+    const 약력=t.c.length?`<ul>${t.c.map(x=>`<li>${x}</li>`).join('')}</ul>`:'';
+    const 과목=t.t||t.s;
+    return `<article>
+      <div class="phw" tabindex="0">${사진}<div class="pop"><span class="psj">${과목}</span><span class="pnm">${t.n}</span>${약력}</div></div>
+      <div><span class="sj">${과목}</span><h3>${t.n}</h3>${약력}</div></article>`;
+  }).join('');
 }
 drawT('all');
 document.getElementById('tAll').onclick=()=>{tOpen=true;drawT('all');};
