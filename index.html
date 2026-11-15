@@ -9,7 +9,7 @@
 <meta property="og:title" content="대치독한수능학원 — 대치 한티역 본관 · 송도 2호관 12월 개원 예정">
 <meta property="og:description" content="대치동 최상위권 강사진의 소수정예 수능 수업. 송도 2호관 12월 중순 개원 예정.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff; --bg2:#f4f6fa; --ink:#111827; --sub:#4b5563; --muted:#8a94a6;
@@ -166,11 +166,78 @@ footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
 .sd-box .btns{display:flex;gap:10px;flex-wrap:wrap}.sd-pt{margin:14px 0 18px;padding-left:18px;line-height:1.9;color:#fff}.sd-r{display:grid;gap:12px;align-content:center}
 .sd-r div{background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px}.sd-r b{display:block;color:#ffd166;font-size:13px}.sd-r span{font-size:15px}
 @media(max-width:760px){.sd-box{grid-template-columns:1fr;padding:24px}}
+
+/* ═══ 2026-11-15 새 디자인 — 흰 바탕 · 먹색 · 와인 포인트 · 명조 제목 (사장님 시안) ═══ */
+:root,:root[data-theme="dark"]{--bg:#fff;--bg2:#F4F4F2;--ink:#111214;--sub:#45484D;--muted:#6A6D72;--line:#E4E4E1;--card:#fff;--shadow:none;--accent:#8C1D2C;--navy:#111214;--navy2:#111214;--gold:#8C1D2C;--gold2:#8C1D2C;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#fff;--bg2:#F4F4F2;--ink:#111214;--sub:#45484D;--muted:#6A6D72;--line:#E4E4E1;--card:#fff;--shadow:none}}
+body{font-family:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;letter-spacing:-.01em;line-height:1.7}
+h1,h2,.hero h1,.logo>span,.dcard h3,.sd-box h2,.t .nm{font-family:"Noto Serif KR",serif;font-weight:600}
+.wrap{max-width:1240px;padding:0 32px}
+@media(max-width:600px){.wrap{padding:0 20px}}
+.ann{background:#111214;color:#fff;font-weight:500;font-size:13px;letter-spacing:.02em;padding:10px 12px}.ann a{color:#fff;border-bottom:1px solid #fff}.ann-k{color:#B9BBBF;margin-right:10px}
+header{background:#fff;color:#111214;border-bottom:1px solid #E4E4E1;backdrop-filter:none}
+.nav{height:78px}
+.logo .mark{display:none}
+.logo>span{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.logo small{color:#6A6D72;font-family:"Noto Sans KR",sans-serif;font-size:11px;letter-spacing:.2em;font-weight:500}
+.menu a{opacity:1;color:#111214}.menu a:hover{color:var(--accent)}
+.cta{background:#fff;color:#111214;border:1px solid #111214;border-radius:0;padding:10px 20px;font-weight:600}
+.cta:hover{background:#111214;color:#fff}
+.burger{color:#111214}
+@media(max-width:860px){.menu{background:#fff;top:78px;border-bottom:1px solid #E4E4E1}}
+.hero{background:#fff;color:#111214;padding:110px 0 96px;border-bottom:1px solid #E4E4E1}
+.hero .tag{border:0;padding:0;border-radius:0;color:#6A6D72;font-weight:500;letter-spacing:.18em;font-size:13px;margin-bottom:30px}
+.hero h1{font-size:clamp(40px,6vw,88px);line-height:1.16;letter-spacing:-.035em;margin-bottom:30px}
+.hero h1 em{color:#111214}.hero h1 em::after{content:"";}
+.hero p{color:#45484D;font-size:18px;line-height:1.8;max-width:600px}
+.btn{border-radius:0;font-weight:600;padding:15px 28px;letter-spacing:.02em}
+.btn.gold{background:#111214;color:#fff}.btn.gold:hover{background:var(--accent)}
+.btn.ghost{background:transparent;border:1px solid #111214;color:#111214}
+.stats{gap:0;margin-top:72px;border-top:1px solid #111214}
+.stat{background:none;border:0;border-bottom:1px solid #E4E4E1;border-radius:0;padding:22px 20px 22px 0}
+.stat b{color:var(--accent);font-family:"Noto Serif KR",serif;font-weight:600;font-size:28px}
+.stat span{color:#45484D}
+section{padding:120px 0}
+section.alt{background:#F4F4F2}
+.eyebrow{color:var(--accent);font-weight:600;font-size:13px;letter-spacing:.2em}
+h2{font-size:clamp(30px,3.6vw,46px);letter-spacing:-.03em;line-height:1.3;margin:14px 0 16px}
+.lead{color:#45484D;margin-bottom:56px}
+.grid3{gap:0;border-top:1px solid #111214}
+.feat{background:none;border:0;border-bottom:1px solid #E4E4E1;border-radius:0;box-shadow:none;padding:36px 36px 36px 0}
+.feat .ic{display:none}
+.feat h3{font-size:21px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px}
+.feat p{color:#45484D}
+.tab{border-radius:0;border-color:#D6D6D2;background:#fff;font-weight:500}
+.tab.on,:root[data-theme="dark"] .tab.on{background:#111214;color:#fff;border-color:#111214}
+.teachers{gap:24px}
+.t{border-radius:0;box-shadow:none;border:1px solid #E4E4E1;background:#fff}
+.t .top{background:#fff;color:#111214;border-bottom:1px solid #E4E4E1;padding:24px}
+.t .av{border-radius:0;background:#F4F4F2;color:var(--accent);font-family:"Noto Serif KR",serif;font-weight:600}
+.t .nm{font-size:22px}
+.t .sj{color:var(--accent);letter-spacing:.08em}
+.t .q{border-top:1px solid #E4E4E1}
+.dcard{background:#111214;border-radius:0}
+.dcard p{color:#C9CBCE}
+.topics div{border-radius:0;background:#fff}
+.gallery button{border-radius:0;box-shadow:none}
+.p{border-radius:0;border:1px solid #E4E4E1;border-left:3px solid var(--accent);background:#fff}
+.songdo-ad{padding:0;background:#111214}
+.sd-box{background:#111214;border-radius:0;padding:110px 0;max-width:none}
+.sd-tag{background:none;color:#B9BBBF;padding:0;border-radius:0;letter-spacing:.2em;font-weight:600}
+.sd-box h2 em{color:#fff;font-style:normal}.sd-box p{color:#C9CBCE}
+.sd-r div{background:none;border-radius:0;border-bottom:1px solid #34363B;padding:16px 0}.sd-r{border-top:1px solid #fff}
+.sd-r b{color:#B9BBBF;font-weight:500}
+.sd-box .btn.gold{background:#fff;color:#111214}.sd-box .btn.ghost{border-color:#fff;color:#fff}
+.contact{background:#fff;color:#111214;border:1px solid #111214;border-radius:0}
+.contact h2{color:#111214}.contact p{color:#45484D}
+.info div{border-bottom:1px solid #E4E4E1}.info b{color:var(--accent)}
+.contact .btn.ghost{border-color:#111214;color:#111214}
+footer{border-top:1px solid #E4E4E1;color:#6A6D72;padding:56px 0 64px}
 </style>
 </head>
 <body>
 
-<div class="ann">📢 송도 2호관 12월 중순 개원 예정 · <a href="#songdo">개원 안내 보기 →</a></div>
+<div class="ann"><span class="ann-k">NOTICE</span> 송도 2호관 12월 중순 개원 예정 · <a href="#songdo">개원 안내 보기 →</a></div>
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top"><span class="mark">독</span><span>대치독한수능학원<small>대치 한티역 본관 · 송도 2호관</small></span></a>
@@ -267,14 +334,14 @@ footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
       <p>고교학점제·5등급제 내신, 권장과목, 학생부 탐구 로드맵, 대학별 전형 변화까지. 매주 연재되는 입시 칼럼과 1:1 정밀 진단 컨설팅으로 우리 아이에게 맞는 전형을 찾아 드립니다.</p>
     </div>
     <div class="topics">
-      <div>📌 권장과목의 의미와 전략적 과목 선택법</div>
-      <div>📌 5등급제 내신, 대학이 변별력을 고민하는 이유</div>
-      <div>📌 의약계열 · 생명공학 탐구 로드맵</div>
-      <div>📌 반도체 · 인공지능 · 신소재 탐구 로드맵</div>
-      <div>📌 경영 · 경제 · 국제 · 언론 계열 탐구 로드맵</div>
-      <div>📌 2027 고려대 · 성균관대 · 한양대 · 서강대 입시 분석</div>
-      <div>📌 2027 지역의사제 전형과 탐구 로드맵</div>
-      <div>📌 서울대 구술면접 대비 전략</div>
+      <div>권장과목의 의미와 전략적 과목 선택법</div>
+      <div>5등급제 내신, 대학이 변별력을 고민하는 이유</div>
+      <div>의약계열 · 생명공학 탐구 로드맵</div>
+      <div>반도체 · 인공지능 · 신소재 탐구 로드맵</div>
+      <div>경영 · 경제 · 국제 · 언론 계열 탐구 로드맵</div>
+      <div>2027 고려대 · 성균관대 · 한양대 · 서강대 입시 분석</div>
+      <div>2027 지역의사제 전형과 탐구 로드맵</div>
+      <div>서울대 구술면접 대비 전략</div>
     </div>
   </div>
 </section>
