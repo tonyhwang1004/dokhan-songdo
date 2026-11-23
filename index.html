@@ -657,7 +657,7 @@ more.onclick=showMore; showMore();
 const lb=document.getElementById('lb'), li=lb.querySelector('img'); let cur=0, L=imgs;
 function openLb(i,list){if(list)L=list; else L=imgs; cur=i;li.src=L[i];lb.classList.add('open');}
 function step(d){cur=(cur+d+L.length)%L.length;li.src=L[cur];}
-const NS=Array.from({length:13},(_,i)=>`img/nonsul/n${String(i+1).padStart(2,'0')}.jpg`);
+const NS=Array.from({length:13},(_,i)=>`img/nonsul/n${String(i+1).padStart(2,"0")}.jpg?v=1124`);
 const th=document.getElementById('nsThumbs');
 NS.slice(0,4).forEach((src,i)=>{const b=document.createElement('button');b.innerHTML=`<img loading="lazy" src="${src}" alt="논술 안내 ${i+1}">`;b.onclick=()=>openLb(i,NS);th.appendChild(b);});
 document.getElementById('nsOpen').onclick=()=>openLb(0,NS);
