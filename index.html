@@ -340,6 +340,7 @@ section.v2-sec.gray{background:#F4F4F2;padding:120px 0}
 .rv p{margin:0;font-size:15px;line-height:1.85;color:#45484D}
 .rv small{display:block;margin-top:14px;font-size:12.5px;letter-spacing:.04em;color:var(--accent);font-weight:600}
 .rv.hide{display:none}
+.v2-fac .tl{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent);border-bottom:1px solid var(--accent)}
 </style>
 </head>
 <body>
@@ -595,7 +596,11 @@ const T=[
  {n:'문지현',s:'영어',c:['현) 메가스터디 영어 인강 대표강사','러셀 공채 1위 영어강사','전) 휘문고 · 단대부고 · 세화고 전임','매년 수능 만점자 배출','이투스북 모의고사 출제 · 검토']},
  {n:'박정은',s:'영어',c:['서울대학교 영어영문학과','서초 메가스터디 강의평가 1위','메가스터디 6월 · 9월 수능 모의평가 대표 평가위원','대성 모의고사 평가위원 (Dfine · Darchaive 모의고사 외)']},
  {n:'고연승',s:'영어',t:'영어 · 메디컬 핵심반',c:['연세대학교 영어영문학과 졸업 · 영어교육학과 석사','현) EBSi 수능 라인업 대표 강사','현) 대치 독수리 의대관','전) 전국모의고사 출제위원','전) 중동고 정교사','강남대성 S2 출강 및 담임','2024 수능연계 교재 『수능완성』 집필']},
- {n:'최한근',s:'탐구',t:'생명과학',c:['고려대학교 생물교육과','강남대성']},
+ {n:'박남진',s:'탐구',t:'통합과학',c:['현) 대치 두각','현) 강남대성','현) 독수리 의대관','전) 대치 시대인재','전) 스카이에듀 인강']},
+ {n:'최한근',s:'탐구',t:'생명과학',c:['고려대학교 생물교육과','현) 강남대성','강남대성 수능연구소 생명과학 책임 연구원','「강대모의고사K」 출제진','전) 메가스터디 · 이투스 인강']},
+ {n:'안민형',s:'탐구',t:'지구과학',c:['고려대학교 지구환경과학과 졸업','서울대 대학원 과학교육과 지구과학전공 석사 수료','현) 강남대성 · 독수리 의대관','강남대성 2019 최우수 강사']},
+ {n:'강윤구',s:'수학',c:['서울대학교 기계항공공학부','이투스 온라인 수학 인강 강사','공인회계사(CPA) 합격','의치대생 · 서울대생 최근 5년간 100명 이상 제자 배출']},
+ {n:'정연우',s:'수학',t:'수학 · 송도 1:1 관리',l:'https://jungyeonwoomath.com',c:['경기고 수석 입학 · 수석 졸업','메이저 의대 출신 수능 수학 전문 강사','수능 수학의 일반화','자체 개발 시스템을 통한 초개인화 관리','★강사상주형★ 무한 1:1 클리닉']},
  {n:'이정태',s:'탐구',t:'통합사회 · 인문논술',c:['서울대학교 문화인류학과 · 미시간주립대 석사','아폴론 · 이슈앤스카이','전) 중앙일보 기자','『밥상에 차려진 통합논술』']},
  {n:'안재훈',s:'논술',t:'인문 · 약술국어',c:['서울대학교 철학과 · 서울대 행정대학원','하나고 · 포항제철고 출강','저서 다수']},
  {n:'강명필',s:'논술',t:'인문논술',c:['서울대학교 인류학과 · 연세대 MBA','다빈치논술 · 이슈앤투데이']},
@@ -610,7 +615,7 @@ const T=[
 ];
 const list=document.getElementById('tlist');
 /* 사진: img/teachers/이름.jpg 를 PHOTO 에 적으면 사진, 없으면 성 한 글자 */
-const PHOTO={};['류성훈','이태형','장의순','김호랑','고연승','권현석','정민','홍진수','최정윤','이예섭','정지만','김현중','이창환','최현재','김경한','문지현','박정은'].forEach(n=>PHOTO[n]='img/teachers/'+n+'.jpg?v=1123j');
+const PHOTO={};['류성훈','이태형','장의순','김호랑','고연승','권현석','정민','홍진수','최정윤','이예섭','정지만','김현중','이창환','최현재','김경한','문지현','박정은','박남진','최한근','안민형','강윤구'].forEach(n=>PHOTO[n]='img/teachers/'+n+'.jpg?v=1124a');
 /* 줄 순서: 1줄 국어 · 2줄 수학 · 3줄 영어 · 4줄 탐구 · 논술 (11/19 사장님 요청)
    같은 과목 안에서는 (탐구는 통합과학·통합사회·사탐 순으로 묶고) 사진 있는 강사 먼저, 나머지는 배열 순서 그대로 */
 const SUBJ=['국어','수학','영어','탐구','논술'];
@@ -626,10 +631,11 @@ function drawT(f){
     const 줄바꿈=(f==='all'&&i>0&&arr[i-1].s!==t.s)?'<div class="tbr" aria-hidden="true"></div>':'';
     const 사진=PHOTO[t.n]?`<img class="ph" loading="lazy" src="${PHOTO[t.n]}" alt="${t.n} 강사">`:`<div class="ph" role="img" aria-label="${t.n} 강사 사진 자리">${t.n[0]}</div>`;
     const 약력=t.c.length?`<ul>${t.c.map(x=>`<li>${x}</li>`).join('')}</ul>`:'';
+    const 링크=t.l?`<a class="tl" href="${t.l}" target="_blank" rel="noopener">홈페이지 바로가기 ↗</a>`:'';
     const 과목=t.t||t.s;
     return 줄바꿈+`<article>
       <div class="phw" tabindex="0">${사진}<div class="pop"><span class="psj">${과목}</span><span class="pnm">${t.n}</span>${약력}</div></div>
-      <div><span class="sj">${과목}</span><h3>${t.n}</h3>${약력}</div></article>`;
+      <div><span class="sj">${과목}</span><h3>${t.n}</h3>${약력}${링크}</div></article>`;
   }).join('');
 }
 drawT('all');
