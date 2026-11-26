@@ -276,7 +276,7 @@ section.v2-sec.gray{background:#F4F4F2;padding:120px 0}
 .v2-three span{font-family:"Noto Serif KR",serif;font-size:15px;color:#6A6D72}
 .v2-three h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1.4}
 .v2-three p{margin:0;color:#45484D;font-size:15px}
-.v2-fac{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:40px 24px}
+.v2-fac{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:36px 22px;max-width:1040px;margin-left:auto;margin-right:auto}
 .v2-fac article{display:flex;flex-direction:column;gap:18px}
 .v2-fac .ph{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;background:#EDEDEB;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif KR",serif;font-size:56px;color:#C9C9C4}
 .v2-fac .sj{font-size:13px;letter-spacing:.08em;color:#6A6D72}
@@ -662,12 +662,12 @@ const T=[
 ];
 const list=document.getElementById('tlist');
 /* 사진: img/teachers/이름.jpg 를 PHOTO 에 적으면 사진, 없으면 성 한 글자 */
-const PHOTO={};['류성훈','이태형','장의순','김호랑','고연승','신연우','권현석','정민','홍진수','최정윤','이예섭','정지만','김현중','이창환','최현재','김경한','문지현','박정은','박남진','최한근','안민형','강윤구'].forEach(n=>PHOTO[n]='img/teachers/'+n+'.jpg?v=1126c');
+const PHOTO={};['류성훈','이태형','장의순','김호랑','고연승','신연우','권현석','정민','홍진수','최정윤','이예섭','정지만','김현중','이창환','최현재','김경한','문지현','박정은','박남진','최한근','안민형','강윤구'].forEach(n=>PHOTO[n]='img/teachers/'+n+'.jpg?v=1126d');
 /* 줄 순서: 1줄 국어 · 2줄 수학 · 3줄 영어 · 4줄 탐구 · 논술 (11/19 사장님 요청)
    같은 과목 안에서는 (탐구는 통합과학·통합사회·사탐 순으로 묶고) 사진 있는 강사 먼저, 나머지는 배열 순서 그대로 */
 const SUBJ=['국어','수학','영어','탐구','논술'];
-const TT=['통합과학','통합사회','사탐']; /* 탐구 안 순서 */
-const ord=t=>{const k=TT.indexOf(t.t);return SUBJ.indexOf(t.s)*1000+(t.s==='탐구'?(k<0?3:k)*100:0)+(PHOTO[t.n]?0:50)+T.indexOf(t);};
+const TT=['통합사회','통합과학']; /* 탐구 안 순서: 통합사회 먼저 (11/26 요청) */
+const ord=t=>{let k=TT.findIndex(x=>(t.t||'').includes(x));return SUBJ.indexOf(t.s)*1000+(t.s==='탐구'?(k<0?3:k)*100:0)+(PHOTO[t.n]?0:50)+T.indexOf(t);};
 const ORD=new Map(T.map(t=>[t,ord(t)])); T.sort((a,b)=>ORD.get(a)-ORD.get(b));
 let tOpen=false;
 function drawT(f){
