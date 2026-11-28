@@ -351,6 +351,16 @@ a[href^="tel:"]::before,a[href^="sms:"]::before{content:"";display:inline-block;
 a[href^="sms:"]::before{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z'/%3E%3C/svg%3E") center/contain no-repeat}
 a[href^="tel:"]:not([class*="btn"]):not(.tel),a[href^="sms:"]:not([class*="btn"]){text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;font-weight:700}
 .v2-dl dd a[href^="tel:"]{text-decoration:none!important}
+/* 2026-11-28 장의순T 합격 실적 */
+.jg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.jg-box{background:#fff;border:1px solid #E4E4E1;padding:26px}
+.jg-box h3{margin:0 0 14px;font-family:"Noto Serif KR",serif;font-size:21px;font-weight:600;color:#111214}
+.jg-box h3 small{font-family:inherit;font-size:14px;color:var(--accent);margin-left:6px}
+.jg-box ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.jg-box li{font-size:14.5px;line-height:1.5;color:#45484D;border-bottom:1px dashed #E4E4E1;padding-bottom:6px}
+.jg-box li b{color:#111214;font-weight:700}
+.jg-box li em{font-style:normal;font-size:12px;color:#8A8D92;margin-left:2px}
+@media(max-width:480px){.jg-box ul{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -443,6 +453,20 @@ a[href^="tel:"]:not([class*="btn"]):not(.tel),a[href^="sms:"]:not([class*="btn"]
     <div class="gallery" id="gallery"></div>
     <div class="more"><button class="v2-btn line" id="moreBtn">수기 더 보기</button></div>
     <p class="note">※ 수기와 성적표는 동의를 받은 제자들에 한해 공개하며, 학생 이름은 가려서 게시합니다.</p>
+  </div>
+</section>
+
+<section class="v2-sec gray" id="results-jang">
+  <div class="wrap">
+    <div class="v2-head">
+      <div><p class="v2-eye">RESULTS · 장의순T 국어</p><h2>장의순T — 1등급은 100점으로, 3·4등급은 1등급으로!</h2></div>
+      <p style="margin:0;max-width:420px;color:#45484D">서울대 국어국문학과 · 고난도 독서·문학 전문. 장의순 선생님 수업을 들은 학생들의 합격 실적입니다.</p>
+    </div>
+    <div class="jg-grid">
+      <div class="jg-box"><h3>의 · 치 · 한 <small>13명</small></h3><ul><li><b>서울대 의대</b> <span>박ㅇ익</span> <em>고3</em></li><li><b>연세대 의대</b> <span>김ㅇ연</span> <em>고3</em></li><li><b>서울대 치대</b> <span>이ㅇ연</span> <em>고3</em></li><li><b>중앙대 의대</b> <span>이ㅇ재</span> <em>고3</em></li><li><b>중앙대 의대</b> <span>이ㅇㅇ</span> <em>고3</em></li><li><b>한양대 의대</b> <span>조ㅇㅇ</span> <em>고3</em></li><li><b>이화여대 의대</b> <span>송ㅇ재</span> <em>고3</em></li><li><b>경희대 의대</b> <span>박ㅇ비</span> <em>고3</em></li><li><b>가천대 의대</b> <span>이ㅇ지</span> <em>고3</em></li><li><b>건양대 의대</b> <span>이ㅇ유</span> <em>N수</em></li><li><b>대구가톨릭대 의대</b> <span>박ㅇ현</span> <em>N수</em></li><li><b>단국대 치대</b> <span>송ㅇ겸</span> <em>N수</em></li><li><b>경희대 한의예 (국어 만점)</b> <span>황ㅇ환</span> <em>N수</em></li></ul></div>
+      <div class="jg-box"><h3>서 · 연 · 고 <small>15명</small></h3><ul><li><b>서울대 컴퓨터공학</b> <span>이ㅇ주</span> <em>고3</em></li><li><b>서울대 컴퓨터공학</b> <span>김ㅇ재</span> <em>고3</em></li><li><b>서울대 기계공학</b> <span>문ㅇ결</span> <em>고3</em></li><li><b>서울대 재료공학</b> <span>박ㅇ빈</span> <em>고3</em></li><li><b>서울대</b> <span>장ㅇ민</span> <em>고3</em></li><li><b>서울대</b> <span>조ㅇ훈</span> <em>고3</em></li><li><b>서울대</b> <span>윤ㅇ원</span> <em>고3</em></li><li><b>서울대</b> <span>손ㅇ원</span> <em>고3</em></li><li><b>서울대</b> <span>이ㅇ리</span> <em>고3</em></li><li><b>연세대</b> <span>유ㅇ아</span> <em>고3</em></li><li><b>연세대</b> <span>최ㅇ은</span> <em>고3</em></li><li><b>연세대</b> <span>김ㅇ희</span> <em>고3</em></li><li><b>연세대</b> <span>길ㅇㅇ</span> <em>N수</em></li><li><b>고려대</b> <span>김진ㅇ</span> <em>고3</em></li><li><b>고려대</b> <span>ㅇ영석</span> <em>N수</em></li></ul></div>
+    </div>
+    <p class="note">※ 시대인재 재종 제외 집계 · 성적표와 합격증을 모두 보유한 학생만 실었습니다. 이름은 가렸습니다.</p>
   </div>
 </section>
 
